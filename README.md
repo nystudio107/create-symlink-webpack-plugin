@@ -10,7 +10,7 @@ module.exports = {
     plugins: [
         new CreateSymlinkPlugin([
             {
-                origin: 'index.html',
+                origin: 'index-[hash].html',
                 symlink: '200.html',
             },
         ])
@@ -28,7 +28,7 @@ module.exports = {
     plugins: [
         new CreateSymlinkPlugin([
             {
-                origin: 'index.html',
+                origin: 'index-[hash].html',
                 symlink: '200.html',
             },
             true

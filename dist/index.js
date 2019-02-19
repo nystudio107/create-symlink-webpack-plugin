@@ -33,7 +33,9 @@ module.exports = function () {
 
                 var makeSymlinks = function makeSymlinks(option) {
                     var outputPath = compiler.options.output.path;
-                    var originPath = path.join(outputPath, option.origin);
+                    // allow origin to have webpack '[hash]' placeholder
+                    var originFileName = option.origin.replace('[hash]', compilation.hash);
+                    var originPath = path.join(outputPath, originFileName);
                     var reportProgress = context && context.reportProgress;
 
                     if (fs.existsSync(originPath) || _this.force) {
