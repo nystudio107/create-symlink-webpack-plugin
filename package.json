@@ -1,6 +1,6 @@
 {
   "name": "create-symlink-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack 4 plugin to generate symlinks",
   "main": "dist/index.js",
   "dependencies": {
