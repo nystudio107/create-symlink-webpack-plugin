@@ -21,7 +21,9 @@ module.exports = class CreateSymlinkPlugin {
 
                 const makeSymlinks = (option) => {
                     const outputPath = compiler.options.output.path;
-                    const originPath = path.join(outputPath, option.origin);
+                    // allow origin to have webpack '[hash]' placeholder
+                    const originFileName = option.origin.replace('[hash]', compilation.hash);
+                    const originPath = path.join(outputPath, originFileName);
                     const reportProgress = context && context.reportProgress;
 
                     if (fs.existsSync(originPath) || this.force) {
